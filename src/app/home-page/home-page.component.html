@@ -1,0 +1,77 @@
+<div class="home-page_container ">
+    <app-side-bar></app-side-bar>
+    <div class="home-page_content">
+        <div class="header">
+            <div>
+                <button class="button"></button>
+                <button class="button"></button>
+            </div>
+            <input class="search" type="text" placeholder="Search">
+        </div>
+        <div class="section">
+            <p class="section_title">Recommend for you</p>
+            <div class="item_wrap">
+                <div class="item" *ngFor="let track of recommendTracks" (click)="getTrackInfo(track)">
+                    <img class="album_img" src={{track.album.images[0].url}} alt="">
+                    <div class="item_info">
+                        <button class="player">
+                            <img src="assets/home-page/Primary-CTA.svg" alt="">
+                        </button>
+
+                        <p class="item_info_heading">
+                            {{track.name}}
+                        </p>
+                        <p class="item_info_content">
+                            {{track.artists[0].name}}
+                        </p>
+                    </div>
+                </div>
+                <!-- <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+                    (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+                    (beforeChange)="beforeChange($event)">
+                    <div ngxSlickItem *ngFor="let album of albums" class="slide">
+                        <div class="item">
+                            <img class="album_img" src={{album.images[0].url}} alt="">
+                            <div class="item_info">
+                                <button class="player">
+                                    <img src="assets/home-page/Primary-CTA.svg" alt="">
+                                </button>
+
+                                <p class="item_info_heading">
+                                    {{album.name}}
+                                </p>
+                                <p class="item_info_content">
+                                    {{album.artists[0].name}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel> -->
+
+            </div>
+        </div>
+        <div class="section">
+            <p class="section_title">New albums relaese</p>
+            <div class="item_wrap">
+                <div class="item" *ngFor="let album of albums">
+                    <img class="album_img" src={{album.images[0].url}} alt="">
+                    <div class="item_info">
+                        <button class="player">
+                            <img src="assets/home-page/Primary-CTA.svg" alt="">
+                        </button>
+
+                        <p class="item_info_heading">
+                            {{album.name}}
+                        </p>
+                        <p class="item_info_content">
+                            {{album.artists[0].name}}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <input type="hidden">{{mes}} -->
+    <app-player-bar [trackPlayer]="trackPlayer"></app-player-bar>
+</div>

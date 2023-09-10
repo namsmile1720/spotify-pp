@@ -1,0 +1,36 @@
+<div class="player_bar_container">
+    <div class="player_bar_wrap">
+        <div class="player_info" *ngIf="trackPlayer;">
+            <img class="player_img" src={{trackPlayer.album.images[1].url}} alt="">
+            <div class="player_info_content">
+                <div class="header">
+                    <div class="heading_wrap">
+                        <marquee class="heading">{{trackPlayer.name}}</marquee>
+                    </div>
+                </div>
+                <p class="content_name">{{trackPlayer.artists[0].name}}</p>
+                <p class="content_playing">PLAING FROM: Coexist</p>
+            </div>
+        </div>
+        <div class="player_media">
+            <div class="media_btn">
+                <button> <img src="assets/player-bar/random.svg" alt=""></button>
+                <button> <img src="assets/player-bar/prev.svg" alt=""></button>
+                <button class="play_btn" (click)="togglePlayPause()"> <img [src]="isPlaying ? 'assets/player-bar/pause.svg' : 'assets/player-bar/play.svg'" alt=""></button>
+                <audio *ngIf="trackPlayer" #audioPlayer [src]="trackPlayer.preview_url"></audio>
+                <button> <img src="assets/player-bar/next.svg" alt=""></button>
+                <button> <img src="assets/player-bar/Icon-Repeat.svg" alt=""></button>
+            </div>
+            <div class="media_slide">
+
+            </div>
+
+        </div>
+        <div class="player_option">
+            <button><img src="assets/player-bar/Icon-Volume.svg" alt=""></button>
+            <button><img src="assets/player-bar/tv.svg" alt=""></button>
+            <button><img src="assets/player-bar/Icon.svg" alt=""></button>
+            <button><img src="assets/player-bar/Icon-Arrow-Left.svg" alt=""></button>
+        </div>
+    </div>
+</div>
